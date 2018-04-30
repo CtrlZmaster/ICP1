@@ -30,7 +30,7 @@ public:
 	void removeConnection(OutPort &a, InPort &b);
 	void removeConnection(InPort &p);
 	void computeReset();
-	void computeStep();
+    void computeStep(BlockBase* block);
 	void computeAll();
 
 };

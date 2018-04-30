@@ -38,15 +38,18 @@ int main() {
 
 	a->inputs[0].Value() = vec2(0, 1);
 	a->inputs[1].Value() = vec2(1, 0);
-	a->Compute();
+    //a->Compute();
 
 	b->inputs[1].Value() = vec2(1, 1);
 
 	schema.addConnection(a->outputs[0], b->inputs[0]);
 
-	b->Compute();
+    //b->Compute();
 
+    schema.computeAll();
 	std::string out = b->outputs[0].Value();
+
+    std::cout << out;
 
 	return 0;
 }

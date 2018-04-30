@@ -38,3 +38,20 @@ void Graph::removeConnection(InPort &p)
 {
 	connections.erase(&p);
 }
+
+void Graph::computeReset() {
+
+}
+
+void Graph::computeStep(BlockBase *b) {
+    if(b->HasAllValues()) {
+        b->Compute();
+    }
+}
+
+void Graph::computeAll() {
+    std::vector<BlockBase*>::size_type i;
+    for(i = 0; i < this->blocks.size(); i++) {
+        this->computeStep(blocks[i]);
+    }
+}
